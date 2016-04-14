@@ -1,23 +1,7 @@
-## for Android: **Draw** use **xml** | 使用xml来绘制
+## for Android: **Draw** use **xml** | 使用xml来绘制图形
 ```xml
 <!-- 列表层，可以用于叠加绘图 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item>
-        <shape>
-            <solid android:color="#a0b0f0" />
-            <gradient
-                android:angle="270"
-                android:endColor="@color/background_color"
-                android:startColor="@color/black" />
-        </shape>
-    </item>
-    
-    <item android:bottom="6dp">
-        <shape>
-            <solid android:color="@color/white" />
-        </shape>
-    </item>
-    
     <!-- 条目标签，可以设置边距 -->
     <item
         android:bottom="13dp"
@@ -47,6 +31,22 @@
             <padding
                 android:left="40dp"
                 android:right="40dp" />
+        </shape>
+    </item>
+    
+    <item>
+        <shape>
+            <solid android:color="#a0b0f0" />
+            <gradient
+                android:angle="270"
+                android:endColor="@color/background_color"
+                android:startColor="@color/black" />
+        </shape>
+    </item>
+    
+    <item android:bottom="6dp">
+        <shape>
+            <solid android:color="@color/white" />
         </shape>
     </item>
 </layer-list>
