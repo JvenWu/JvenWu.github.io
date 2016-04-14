@@ -1,5 +1,5 @@
 ## for Android: *Draw* use *xml* | 使用xml来绘制图形
->使用<layer-list>可以通过叠加shape的方式来绘图
+>使用```xml<layer-list>```可以通过叠加shape的方式来绘图
 >具体实现代码如下：
 
 ```xml
