@@ -6,18 +6,24 @@
 
 ### @interface
 ```objectivec
-@interface ViewController : UIViewController //ViewController继承UIViewController类
-<UIPickerViewDataSource,UIPickerViewDelegate>{ //实现UIPickerViewDataSource,UIPickerViewDelegate (Protocal,对应Java中接口
-    NSArray *activities;
+@interface ViewController : UIViewController    //ViewController继承UIViewController类
+<UIPickerViewDataSource,UIPickerViewDelegate>{  //实现UIPickerViewDataSource,UIPickerViewDelegate协议,对应Java中的接口
+    NSArray *activities;    //Field,字段
     NSArray *feelings;
     IBOutlet UIPickerView *dataPicker;
     IBOutlet UITextField *noteText;
 }
-@property (retain,nonatomic) UIPickerView *dataPicker;
+@property (retain,nonatomic) UIPickerView *dataPicker;  //属性
 @property (retain,nonatomic) UITextField *noteText;
 
-- (IBAction)pressedButton:(id)sender;
+- (IBAction)pressedButton:(id)sender;   //方法
 - (IBAction)textDidDone:(id)sender;
 
 @end
 ```
+- Class: ViewController
+- BaseClass: UIViewController
+- Protocal: UIPickerViewDataSource,UIPickerViewDelegate
+- Field: activities,feelings
+- Property: dataPicker,noteText
+- Method: pressedButton,textDidDone
