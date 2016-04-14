@@ -1,5 +1,5 @@
 ## for Android: **Draw** use **xml** | 使用xml来绘制
-'''xml
+```xml
 <!-- 列表层，可以用于叠加绘图 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item>
@@ -50,4 +50,4 @@
         </shape>
     </item>
 </layer-list>
-'''
+```
