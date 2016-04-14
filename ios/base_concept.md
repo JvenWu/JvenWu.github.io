@@ -5,7 +5,7 @@
 - .m文件 实现相关类成员
 
 ### @interface
-```object-c
+```swift
 @interface ViewController : UIViewController
 <UIPickerViewDataSource,UIPickerViewDelegate>{
     NSArray *activities;
