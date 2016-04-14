@@ -6,8 +6,8 @@
 
 ### @interface
 ```objectivec
-@interface ViewController : UIViewController
-<UIPickerViewDataSource,UIPickerViewDelegate>{
+@interface ViewController : UIViewController //ViewController继承UIViewController类
+<UIPickerViewDataSource,UIPickerViewDelegate>{ //实现UIPickerViewDataSource,UIPickerViewDelegate (Protocal,对应Java中接口
     NSArray *activities;
     NSArray *feelings;
     IBOutlet UIPickerView *dataPicker;
