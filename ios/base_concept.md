@@ -5,7 +5,7 @@
 - .m文件 实现相关类成员
 
 ### @interface
->可用于定义类,枚举,块等
+>类定义
 
 ```objectivec
 @interface ViewController : UIViewController    //ViewController继承UIViewController类
