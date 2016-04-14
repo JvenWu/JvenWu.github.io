@@ -1,4 +1,4 @@
-## for Android: **Draw** use **xml** | 使用xml来绘制图形
+## for Android: *Draw* use *xml* | 使用xml来绘制图形
 ```xml
 <!-- 列表层，可以用于叠加绘图 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
