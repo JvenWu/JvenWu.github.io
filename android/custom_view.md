@@ -29,12 +29,16 @@ attrs.xml
 ### 在View构造函数中获得属性值
 ```java
 public class CustomTitleView extends View {
-	
-	private String mTitleString;;
+	//文本信息
+	private String mTitleString;
+	//文字颜色
 	private int mTitleColor;
+	//文字大小
 	private int mTitleSize;
 	
+	//画笔
 	private Paint mPaint;
+	//文字所占距形
 	private Rect mTitleBound;
 	
 	public CustomTitleView(Context context){
@@ -49,7 +53,6 @@ public class CustomTitleView extends View {
 		super(context,attrs,defStyle);
 		
 		this.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				mTitleString = randomText();
@@ -57,6 +60,7 @@ public class CustomTitleView extends View {
 			}
 		});
 		
+		//设置默认字体颜色
 		mTitleColor = Color.BLACK;
 		TypedArray array = context.getTheme().obtainStyledAttributes(
 				attrs, R.styleable.CustomTitleView, defStyle, 0);
@@ -71,17 +75,20 @@ public class CustomTitleView extends View {
 				mTitleColor = array.getColor(attr, Color.BLACK);
 				break;
 			case R.styleable.CustomTitleView_titleSize:
+				//设置字体大小，默认为16sp，要把sp转换成px
 				mTitleSize = array.getDimensionPixelSize(attr, (int)TypedValue.applyDimension(
 						TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
 			default:
 				break;
 			}
 		}
+		//回收资源
 		array.recycle();
 		
 		mPaint = new Paint();
 		mPaint.setTextSize(mTitleSize);
 		
+		//获取文字所占距形大小
 		mTitleBound = new Rect();
 		mPaint.getTextBounds(mTitleString, 0, mTitleString.length(), mTitleBound);
 	}
@@ -118,20 +125,22 @@ public class CustomTitleView extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		Random random = new Random();
+		//绘制底框矩形背景
 		mPaint.setColor(Color.GRAY);
 		canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
 		
+		//绘制文本
 		mPaint.setColor(mTitleColor);
 		canvas.drawText(mTitleString, 
 				getWidth()/2-mTitleBound.width()/2, 
 				getHeight()/2+mTitleBound.height()/2, mPaint);
-		
+		//绘制噪点
 		mPaint.setColor(Color.RED);
 		for(int i = 0;i<1000;i++){
 			canvas.drawCircle(random.nextInt(getWidth()), random.nextInt(getHeight()), 1, mPaint); 
 		}
 	}
-
+	//生成4位随机数
 	private String randomText(){
 		Random random = new Random();
 		Set<Integer> set = new HashSet<Integer>();
@@ -145,4 +154,25 @@ public class CustomTitleView extends View {
 		return sBuilder.toString();
 	}
 }
+```
+### 使用
+```xml
+<!-- 引入命名空间 xmlns:custom="http://schemas.android.com/apk/res/com.zkbr.demo" -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res/com.zkbr.demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+	
+    <com.zkbr.demo.CustomTitleView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        custom:titleText="hello world"
+        custom:titleColor="#00ff00"
+        custom:titleSize="40dp"
+        android:layout_centerInParent="true"  />
+
+</RelativeLayout>
 ```
