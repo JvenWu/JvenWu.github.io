@@ -155,9 +155,9 @@ public class CustomTitleView extends View {
 	}
 }
 ```
-### 使用
+### 布局文件中使用
 ```xml
-<!-- 引入命名空间 xmlns:custom="http://schemas.android.com/apk/res/com.zkbr.demo" -->
+<!-- 注意引入自定义View所在命名空间 xmlns:custom="http://schemas.android.com/apk/res/com.zkbr.demo" -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:custom="http://schemas.android.com/apk/res/com.zkbr.demo"
@@ -176,3 +176,4 @@ public class CustomTitleView extends View {
 
 </RelativeLayout>
 ```
+*测量模式:* **MeasureSpec.EXACTLY MeasureSpec.AT_MOST MeasureSpec.UISPECIFIED**
