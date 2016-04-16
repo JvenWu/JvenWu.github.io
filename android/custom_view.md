@@ -176,4 +176,7 @@ public class CustomTitleView extends View {
 
 </RelativeLayout>
 ```
-*测量模式:* **MeasureSpec.EXACTLY MeasureSpec.AT_MOST MeasureSpec.UISPECIFIED**
+>测量模式
+- MeasureSpec.EXACTLY  
+- MeasureSpec.AT_MOST  
+- MeasureSpec.UISPECIFIED
