@@ -37,6 +37,8 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 
 export PATH=${JAVA_HOME}/bin:$PATH
 
+设置完后重启下
+
 4.检测java是否设置成功
 
 java -version
