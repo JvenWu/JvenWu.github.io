@@ -19,6 +19,12 @@ sudo tar -xzvf jdk-8u65-linux-x64.tar.gz -C /usr/lib/jvm
 2.cd进/usr/lib/jvm 查看是否有 jdk1.8.0_65文件夹
 
 3.设置java环境变量
+/etc/profile的设置方法对所有登录的用户都有效。
+~/.bashrc只对当前用户有效。
+
+上面两个都是配置文件，开机后，系统会先读取/etc/profile，再读~/.bashrc。
+不同的用户~/.bashrc文件可以有不同的设置，而/etc/profile则是共用一个，只有root才能修改。
+~/.bashrc对/etc/profile有追加覆盖的效果。
 
 在/etc/profile中添加：
 
