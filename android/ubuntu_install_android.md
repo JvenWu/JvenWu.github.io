@@ -1,7 +1,7 @@
 ## for Android: Install Android IN Ubuntu | 在Ubuntu上安装Android源码
 >*not test below*
 
-##安装git工具：sudo add-get install git-core gnupg
+##安装git工具：sudo apt-get install git-core gnupg
 
 ##从命令行安装jdk
 sudo add-apt-repository ppa:ferramroberto/java
