@@ -371,3 +371,17 @@ public class TitleImageMenu extends View {
 	}
 }
 ```
+
+```xml
+Layout
+<com.zkbr.demo.TitleImageMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:titleText="dlrow olleh"
+        custom:titleColor="#0000ff"
+        custom:titleSelectedColor="#ff0000"
+        custom:titleSize="20sp"
+        custom:image="@drawable/blank_ico_renwu"
+        custom:selectedImage="@drawable/blank_ico_richeng"
+        custom:imageScaleType="center"/>
+```
