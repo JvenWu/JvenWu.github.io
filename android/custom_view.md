@@ -333,9 +333,11 @@ public class TitleImageMenu extends View {
 			canvas.drawBitmap(defImage, null, mImgRect,mPaint);
 		}else{
 			mImgRect.left = mWidth/2 - defImage.getWidth()/2;
-			mImgRect.top = (mHeight - getPaddingBottom() - mTxtBounds.height() + getPaddingTop())/2 - defImage.getHeight()/2;
+			mImgRect.top = (mHeight - getPaddingBottom() - mTxtBounds.height() + getPaddingTop())/2 
+			- defImage.getHeight()/2;
 			mImgRect.right = mWidth/2 + defImage.getWidth()/2;
-			mImgRect.bottom = (mHeight - getPaddingBottom() - mTxtBounds.height() + getPaddingTop())/2 + defImage.getHeight()/2;
+			mImgRect.bottom = (mHeight - getPaddingBottom() - mTxtBounds.height() + getPaddingTop())/2 
+			+ defImage.getHeight()/2;
 			canvas.drawBitmap(defImage, null, mImgRect,mPaint);
 		}
 		
@@ -351,7 +353,8 @@ public class TitleImageMenu extends View {
 			mWidth = specSize;
 		}else if(specMode == MeasureSpec.AT_MOST){
 			int byImgWidth = getPaddingLeft() + getPaddingRight() + 
-					mImage.getWidth()>mSelectedImage.getWidth()?mImage.getWidth():mSelectedImage.getWidth();
+					mImage.getWidth()>mSelectedImage.getWidth()?
+					mImage.getWidth():mSelectedImage.getWidth();
 			int byTxtWidth = getPaddingLeft() + getPaddingRight() + mTxtBounds.width();
 			
 			mWidth = Math.max(byImgWidth, byTxtWidth);
@@ -364,7 +367,8 @@ public class TitleImageMenu extends View {
 			mHeight = specSize;
 		}else if(specMode == MeasureSpec.AT_MOST){
 			mHeight = getPaddingTop() + getPaddingBottom() + 
-					mImage.getHeight()>mSelectedImage.getHeight()?mImage.getHeight():mSelectedImage.getHeight() 
+					mImage.getHeight()>mSelectedImage.getHeight()?
+					mImage.getHeight():mSelectedImage.getHeight() 
 					+ mTxtBounds.height();
 		}
 		setMeasuredDimension(mWidth, mHeight);
