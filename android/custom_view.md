@@ -183,7 +183,7 @@ public class CustomTitleView extends View {
 
 >
 
-### Sample Below
+### Sample Below : Bottom Menu | 底部菜单
 ```xml
 attrs.xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -377,7 +377,7 @@ public class TitleImageMenu extends View {
 ```
 
 ```xml
-Layout
+activity_main.xml
 <com.zkbr.demo.TitleImageMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
