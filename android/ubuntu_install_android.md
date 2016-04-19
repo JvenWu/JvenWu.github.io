@@ -64,7 +64,7 @@ java HelloWorld
 
 ##安装调试工具: sudo apt-get install valgrind
 
-##在用户目录下，创建bin文件夹，用于存放repo，并把该路径设置到环境变量中：  
+##在用户目录下，创建bin文件夹，用于存放repo，并把该路径设置到环境变量中
 > mkdir ~/bin  
 PATH=~/bin:$PATH 
 
@@ -94,7 +94,8 @@ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1
 > 同步代码  
 repo sync
 
-##代码下载过程中，提示错误解决方法：编辑/etc/hosts文件  
+##代码下载过程中，提示错误解决方法
+> 编辑/etc/hosts文件  
 $ vim /etc/hosts  
 增加下面内容，保存（提前保存好）：  
 74.125.31.82 www.googlesource.com  
