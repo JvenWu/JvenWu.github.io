@@ -101,7 +101,7 @@ $ vim /etc/hosts
 74.125.31.82 www.googlesource.com  
 74.125.31.82 android.googlesource.com  
 203.208.46.172 cache.pack.google.com  
-59.24.3.173cache.pack.google.com  
+59.24.3.173 cache.pack.google.com  
 然后重新输入  
 $ repo sync
 
