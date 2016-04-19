@@ -78,7 +78,7 @@ cp repo /bin/
 curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo  
 $ chmod a+x ~/bin/repo 
 
-##下载安桌工程  
+##下载安卓工程  
 > mkdir Android  
 cd Android
 
