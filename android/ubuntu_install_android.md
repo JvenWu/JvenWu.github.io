@@ -155,23 +155,27 @@ USER-NAME@MACHINE-NAME:~/Android/kernel/common$ export PATH=$PATH:~/Android/preb
 \# CROSS_COMPILE?= 
 ARCH ?= arm  #体系结构为arm
 CROSS_COMPILE     ?= arm-eabi- #交叉编译工具链前缀，参考~/Android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin目录 
-3.开始编译：
-USER-NAME@MACHINE-NAME:~/Android/kernel/common$ make goldfish_defconfig
-USER-NAME@MACHINE-NAME:~/Android/kernel/common$ make
-编译成功后，可看到下面两行：
-OBJCOPY arch/arm/boot/zImage
-Kernel: arch/arm/boot/zImage is ready
+
+> 3. 开始编译  
+USER-NAME@MACHINE-NAME:~/Android/kernel/common$ make goldfish_defconfig  
+USER-NAME@MACHINE-NAME:~/Android/kernel/common$ make  
+编译成功后，可看到下面两行：  
+OBJCOPY arch/arm/boot/zImage  
+Kernel: arch/arm/boot/zImage is ready  
 执行make命令前，也可以执行make menuconfig先配置一下编译选项
 
-在模拟器中运行编译好的内核。
-1.在启动模拟器之前，先设置模拟器的目录到环境变量$PATH
+## 在模拟器中运行编译好的内核
+> 1. 在启动模拟器之前，先设置模拟器的目录到环境变量$PATH  
 USER-NAME@MACHINE-NAME:~/Android$ export PATH=$PATH:~/Android/out/host/linux-x86/bin
-2.设置ANDROID_PRODUCT_OUT环境变量
+
+> 2. 设置ANDROID_PRODUCT_OUT环境变量  
 USER-NAME@MACHINE-NAME:~/Android$ export ANDROID_PRODUCT_OUT=~/Android/out/target/product/generic
-3.在后台中指定内核文件启动模拟器：
+
+> 3. 在后台中指定内核文件启动模拟器  
 USER-NAME@MACHINE-NAME:~/Android$  emulator -kernel ./kernel/common/arch/arm/boot/zImage &
-4.用adb工具连接模拟器，查看内核版本信息，看看模拟器上跑的内核是不是我们刚才编译出来的内核：
-USER-NAME@MACHINE-NAME:~/Android$ adb shell
-root@android:/ # cd proc
+
+> 4. 用adb工具连接模拟器，查看内核版本信息，看看模拟器上跑的内核是不是我们刚才编译出来的内核  
+USER-NAME@MACHINE-NAME:~/Android$ adb shell  
+root@android:/ # cd proc  
 root@android:/proc # cat version
 
