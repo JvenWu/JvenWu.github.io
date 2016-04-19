@@ -65,42 +65,39 @@ java HelloWorld
 ##安装调试工具: sudo apt-get install valgrind
 
 ##下载安桌工程
->在用户目录下，创建bin文件夹，用于存放repo，并把该路径设置到环境变量中：
-
-mkdir ~/bin
-
+>在用户目录下，创建bin文件夹，用于存放repo，并把该路径设置到环境变量中：  
+mkdir ~/bin  
 PATH=~/bin:$PATH 
 
->下载repo的脚本，用于执行repo:
-下载repo脚本方式一
-wget https://dl-ssl.google.com/dl/googlesource/git-repo/repo
-chmod 777 repo
+>下载repo的脚本，用于执行repo:  
+下载repo脚本方式一  
+wget https://dl-ssl.google.com/dl/googlesource/git-repo/repo  
+chmod 777 repo  
 cp repo /bin/
 
->下载repo脚本方式二
-curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo   
+>下载repo脚本方式二  
+curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo  
 $ chmod a+x ~/bin/repo 
 
->下载安桌工程
-mkdir Android
-cd Android
-默认下载主线分支
-repo init -u https://dl-ssl.google.com/dl/googlesource/git-repo/repo
-下载主线分支，主分支里面包含着最新修改的bugs，并未正式发出版本的最新源码
-repo init -u https://android.googlesource.com/platform/manifest
-下载其他分支，正式发布的版本，可以通过添加-b的命令下载下来
-repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
-同步代码
+>下载安桌工程  
+mkdir Android  
+cd Android  
+默认下载主线分支  
+repo init -u https://dl-ssl.google.com/dl/googlesource/git-repo/repo  下载主线分支，主分支里面包含着最新修改的bugs，并未正式发出版本的最新源码  
+repo init -u https://android.googlesource.com/platform/manifest  
+下载其他分支，正式发布的版本，可以通过添加-b的命令下载下来  
+repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1  
+同步代码  
 repo sync
 
->代码下载过程中，提示错误解决方法：编辑/etc/hosts文件
-$ vim /etc/hosts
-增加下面内容，保存（提前保存好）：
-74.125.31.82 www.googlesource.com
-74.125.31.82 android.googlesource.com
-203.208.46.172 cache.pack.google.com
-59.24.3.173cache.pack.google.com
-然后重新输入
+>代码下载过程中，提示错误解决方法：编辑/etc/hosts文件  
+$ vim /etc/hosts  
+增加下面内容，保存（提前保存好）：  
+74.125.31.82 www.googlesource.com  
+74.125.31.82 android.googlesource.com  
+203.208.46.172 cache.pack.google.com  
+59.24.3.173cache.pack.google.com  
+然后重新输入  
 $ repo sync
 
 ##编译安装源码：在Android目录下 make
