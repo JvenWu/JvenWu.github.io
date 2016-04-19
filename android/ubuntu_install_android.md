@@ -174,7 +174,7 @@ USER-NAME@MACHINE-NAME:~/Android$ export ANDROID_PRODUCT_OUT=~/Android/out/targe
 > 3. 在后台中指定内核文件启动模拟器  
 USER-NAME@MACHINE-NAME:~/Android$  emulator -kernel ./kernel/common/arch/arm/boot/zImage &
 
-> 4. 用adb工具连接模拟器，查看内核版本信息
+> 4. 用adb工具连接模拟器，查看内核版本信息  
 USER-NAME@MACHINE-NAME:~/Android$ adb shell  
 root@android:/ # cd proc  
 root@android:/proc # cat version
