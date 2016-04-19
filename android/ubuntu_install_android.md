@@ -126,7 +126,7 @@ USER-NAME@MACHINE-NAME:~/Android$ emulator
 
 模拟器运行需要四个文件，分别是Linux Kernel镜像zImage和Android镜像文件system.img、userdata.img和ramdisk.img
 
-3.指定镜像文件来运行模拟器
+3. 指定镜像文件来运行模拟器
 
 USER-NAME@MACHINE-NAME:~/Android$ emulator -kernel ./prebuilt/android-arm/kernel/kernel-qemu -sysdir ./out/target/product/generic -system system.img -data userdata.img -ramdisk ramdisk.img
 
