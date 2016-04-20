@@ -18,7 +18,7 @@ UITabBarController *tabbarVC = [[UITabBarController alloc] init];
 
 OldViewController *oldC = [[OldViewController] init];
 
-oldC.tabBarItem.title = @"控制器1 ";
+oldC.tabBarItem.title = @"控制器1";
 
 oldC.tabBarItem.image = [UIImage imageNamed:@"old.png"];
 
@@ -28,7 +28,7 @@ newC.tabBarItem.title = @"控制器2";
 
 newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 
-// 添加子控制器（这些子控制器会自动添加到UITabBarController的viewControllers数组中）
+//添加子控制器(这些子控制器会自动添加到UITabBarController的viewControllers数组中)
 
 [tabbarVC addChildViewController:recent];
 
