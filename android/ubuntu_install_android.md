@@ -212,3 +212,28 @@ USER-NAME@MACHINE-NAME:~/Android/packages/apps/Email/$ mm
 打包system.img文件命令  
 > USER-NAME@MACHINE-NAME:~/Android$ make snod
 
+## 独立分发的Android模拟器(在非SDK环境、非BUILD环境可用)
+Android应用程序，使用模拟器来运行时，要么是SDK环境下，要么是在源代码BUILD环境下
+
+运行Android模拟器emulator，须具备4个系统镜像
+> - system.img
+- userdata.img
+- ramdisk.img
+- kernel-qemu
+- 模拟器皮肤(可选)
+- adb工具(可选)
+
+获得必要文件
+> 1.下载官方sdk
+2.复制emulator.exe和emulator-arm.exe
+3.复制adb.exe和AdbWinApi.dll
+4.复制images文件夹(里面包含4个系统镜像)
+5.复制skins文件夹(包含模拟器皮肤)
+
+启动模拟器(start /b表示在后台运行emulator)
+> D:\Emulator>start /b emulator.exe -sysdir d:\AndroidEmulator -system 
+images\system.img -data images\userdata.img -ramdisk images\ramdisk.img -kernel 
+images\kernel-qemu -skindir d:\AndroidEmulator\skins -skin HVGA
+
+安装APK程序，执行adb install XXX.apk命令
+
