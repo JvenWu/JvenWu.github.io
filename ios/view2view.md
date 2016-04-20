@@ -2,12 +2,12 @@
 
 下面以OldViewController(oldC)的按钮btn点击后跳转到NewViewController(newC)为例说明:
 
-1. Storyboard的segues方式  
+1.Storyboard的segues方式  
 鼠标点击按钮btn然后按住control键拖拽到newC页面，在弹出的segue页面中选择跳转模式即可  
 优点:操作方便,无代码生成,在storyboard中展示逻辑清晰  
 缺点:页面较多时不方便查看,团队合作时可维护性差, 多人合作时不建议使用这种方式
 
-2. 选项卡UITabBarController控制器
+2.选项卡UITabBarController控制器
 ```objectivec
 //通过调用UITabBarController的addChildViewController方法添加子控制器
 UITabBarController *tabbarVC = [[UITabBarController alloc] init];  
@@ -24,7 +24,7 @@ newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 优点:代码量较少  
 缺点:tabbar的iOS原生样式不太好看,(不常用,目前不建议使用),如果要使用,建议自定义tabbar
 
-3. 导航控制器UINavigationController
+3.导航控制器UINavigationController
 ```objectivec
 //在oldC的btn的监听方法中调用
 [self.navigationController pushViewController:newC animated:YES]; //跳转到下一页面
@@ -34,7 +34,7 @@ newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 [ self .navigationController popToRootViewControllerAnimated: YES ];  //返回根控制器,即最开始的页面
 ```
 
-4. 利用 Modal 形式展示控制器
+4.利用 Modal 形式展示控制器
 ```objectivec
 //在oldC中调用:
 [ self presentViewController:newC animated: YES completion:nil];
@@ -44,34 +44,35 @@ newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 //[self dismissModalViewControllerAnimated:YES];
 ```
 
-5. 无动画
+5.无动画
 ```objectivec
 [self.view addSubview:<(UIView *)>]
 [self.view removeFromSuperview]; 
 ```
 
-6. 直接更改 UIWindow 的 rootViewController
+6.直接更改 UIWindow 的 rootViewController
 ```objectivec
 [self.view.window addSubview:otherview];
 [self.view removeFromSuperview]
 ```
 
-7. 从xib的viewcontroll中启动storyboard或者从一个storyboard切换到另一个storyboard
+7.从xib的viewcontroll中启动storyboard或者从一个storyboard切换到另一个storyboard
 ```objectivec
 UIStoryboard *secondStoryboard = [UIStoryboard storyboardWithName:@"SecondStoryboard" bundle:nil];    
 [self presentModalViewController:[secondStoryboard instantiateInitialViewController] animated:YES];
 ```
 
-8. 从storyboard切换到xib
+8.从storyboard切换到xib
 ```objectivec
 LoginViewController *loginViewController = [[LoginViewController alloc] 
 initWithNibName:@"LoginViewController" bundle:nil];
 //然后用push或者modal方法启用这个controller
 ```
 
-9. 其它
+9.其它
 ```objectivec
-self.fristController=[[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"FristController"];  
+self.fristController=[[UIStoryboard 
+storyboardWithName:@"Main_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"FristController"];  
 [self.navigationController pushViewController:self.fristController animated:YES];
 ```
 
