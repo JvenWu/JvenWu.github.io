@@ -224,11 +224,11 @@ Android应用程序，使用模拟器来运行时，要么是SDK环境下，要�
 - adb工具(可选)
 
 获得必要文件
-> 1.下载官方sdk
-2.复制emulator.exe和emulator-arm.exe
-3.复制adb.exe和AdbWinApi.dll
-4.复制images文件夹(里面包含4个系统镜像)
-5.复制skins文件夹(包含模拟器皮肤)
+> 1. 下载官方sdk
+2. 复制emulator.exe和emulator-arm.exe
+3. 复制adb.exe和AdbWinApi.dll
+4. 复制images文件夹(里面包含4个系统镜像)
+5. 复制skins文件夹(包含模拟器皮肤)
 
 启动模拟器(start /b表示在后台运行emulator)
 > D:\Emulator>start /b emulator.exe -sysdir d:\AndroidEmulator -system 
