@@ -178,6 +178,7 @@ USER-NAME@MACHINE-NAME:~/Android$  emulator -kernel ./kernel/common/arch/arm/boo
 USER-NAME@MACHINE-NAME:~/Android$ adb shell  
 root@android:/ # cd proc  
 root@android:/proc # cat version
+
 ## 编译Android源码模块
 > Android源代码目录下的build目录，有envsetup.sh脚本文件，执行该脚本文件，可以获得一些工具  
 USER-NAME@MACHINE-NAME:~/Android$ ./build/envsetup.sh
