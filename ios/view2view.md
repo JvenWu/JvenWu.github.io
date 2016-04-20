@@ -33,7 +33,6 @@ newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 //当有多次跳转发生并希望返回根控制器时,调用:
 [ self .navigationController popToRootViewControllerAnimated: YES ];  //返回根控制器,即最开始的页面
 ```
-
 4.利用 Modal 形式展示控制器
 ```objectivec
 //在oldC中调用:
