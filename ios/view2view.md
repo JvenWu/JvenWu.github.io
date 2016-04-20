@@ -71,7 +71,7 @@ initWithNibName:@"LoginViewController" bundle:nil];
 
 9. 其它
 ```objectivec
-self.fristController=[[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil]  instantiateViewControllerWithIdentifier:@"FristController"];  
+self.fristController=[[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"FristController"];  
 [self.navigationController pushViewController:self.fristController animated:YES];
 ```
 
