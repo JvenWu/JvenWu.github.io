@@ -184,8 +184,8 @@ root@android:/proc # cat version
 USER-NAME@MACHINE-NAME:~/Android$ ./build/envsetup.sh
 
 
-> 执行完后有如下命令可用  
-- croot: Changes directory to the top of the tree.
+执行完后有如下命令可用  
+> - croot: Changes directory to the top of the tree.
 - m: Makes from the top of the tree.
 - mm: Builds all of the modules in the current directory.
 - mmm: Builds all of the modules in the supplied directories.
@@ -195,21 +195,20 @@ USER-NAME@MACHINE-NAME:~/Android$ ./build/envsetup.sh
 - godir: Go to the directory containing a file.
 
 
-> 编译  
-使用mmm命令来编译指定的模块  
+编译  
+> 使用mmm命令来编译指定的模块  
 USER-NAME@MACHINE-NAME:~/Android$ mmm packages/apps/Email/  
 
 > 使用mm命令来编译当前目录  
 USER-NAME@MACHINE-NAME:~/Android/packages/apps/Email/$ mm  
 
 
-> 编译后目标放置的目录  
-- apk: out/target/product/generic/system/app  
+编译后目标放置的目录  
+> - apk: out/target/product/generic/system/app  
 - C编译的可执行文件: out/target/product/generic/system/bin  
 - 动态链接库文件: out/target/product/generic/system/lib  
 - 硬件抽象层(HAL)接口文件: out/target/product/generic/system/lib/hw
 
-
-> 打包system.img文件命令  
-USER-NAME@MACHINE-NAME:~/Android$ make snod
+打包system.img文件命令  
+> USER-NAME@MACHINE-NAME:~/Android$ make snod
 
