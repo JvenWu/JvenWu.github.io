@@ -14,25 +14,25 @@
 ```objectivec
 //通过调用UITabBarController的addChildViewController方法添加子控制器
 
-UITabBarController *tabbarVC = [[ UITabBarController alloc ] init ];  
+UITabBarController *tabbarVC = [[UITabBarController alloc] init];  
 
-OldViewController *oldC = [[ OldViewController ] init ];
+OldViewController *oldC = [[OldViewController] init];
 
-oldC. tabBarItem . title = @"控制器1 " ;
+oldC.tabBarItem.title = @"控制器1 ";
 
-oldC. tabBarItem . image = [ UIImage imageNamed : @"old.png" ];
+oldC.tabBarItem.image = [UIImage imageNamed:@"old.png"];
 
-NewViewController *newC = [[NewViewController ] init ];
+NewViewController *newC = [[NewViewController] init];
 
-newC. tabBarItem . title = @"控制器2 " ;
+newC.tabBarItem.title = @"控制器2";
 
-newC. tabBarItem . image = [ UIImage imageNamed : @"new.png" ];
+newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 
-// 添加子控制器（这些子控制器会自动添加到UITabBarController的 viewControllers 数组中）
+// 添加子控制器（这些子控制器会自动添加到UITabBarController的viewControllers数组中）
 
-[tabbarVC addChildViewController :recent];
+[tabbarVC addChildViewController:recent];
 
-[tabbarVC addChildViewController :friends];
+[tabbarVC addChildViewController:friends];
 ```
 
 优点:代码量较少
@@ -85,7 +85,8 @@ UIStoryboard *secondStoryboard = [UIStoryboard storyboardWithName:@"SecondStoryb
 
 8. 从storyboard切换到xib
 ```objectivec
-LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+LoginViewController *loginViewController = [[LoginViewController alloc] 
+initWithNibName:@"LoginViewController" bundle:nil];
 //然后用push或者modal方法启用这个controller
 ```
 
