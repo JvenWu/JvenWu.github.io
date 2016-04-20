@@ -2,55 +2,35 @@
 
 下面以OldViewController(oldC)的按钮btn点击后跳转到NewViewController(newC)为例说明:
 
-1. Storyboard的segues方式
-
-鼠标点击按钮btn然后按住control键拖拽到newC页面，在弹出的segue页面中选择跳转模式即可
-
-优点:操作方便,无代码生成,在storyboard中展示逻辑清晰
-
+1. Storyboard的segues方式  
+鼠标点击按钮btn然后按住control键拖拽到newC页面，在弹出的segue页面中选择跳转模式即可  
+优点:操作方便,无代码生成,在storyboard中展示逻辑清晰  
 缺点:页面较多时不方便查看,团队合作时可维护性差, 多人合作时不建议使用这种方式
 
 2. 选项卡UITabBarController控制器
 ```objectivec
 //通过调用UITabBarController的addChildViewController方法添加子控制器
-
 UITabBarController *tabbarVC = [[UITabBarController alloc] init];  
-
 OldViewController *oldC = [[OldViewController] init];
-
 oldC.tabBarItem.title = @"控制器1";
-
 oldC.tabBarItem.image = [UIImage imageNamed:@"old.png"];
-
 NewViewController *newC = [[NewViewController] init];
-
 newC.tabBarItem.title = @"控制器2";
-
 newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
-
 //添加子控制器(这些子控制器会自动添加到UITabBarController的viewControllers数组中)
-
 [tabbarVC addChildViewController:recent];
-
 [tabbarVC addChildViewController:friends];
 ```
-
-优点:代码量较少
-
+优点:代码量较少  
 缺点:tabbar的iOS原生样式不太好看,(不常用,目前不建议使用),如果要使用,建议自定义tabbar
 
 3. 导航控制器UINavigationController
 ```objectivec
 //在oldC的btn的监听方法中调用
-
 [self.navigationController pushViewController:newC animated:YES]; //跳转到下一页面
-
 //在newC的方法中调用
-
 [self.navigationController popViewControllerAnimated:YES]; //返回上一页面 
-
 //当有多次跳转发生并希望返回根控制器时,调用:
-
 [ self .navigationController popToRootViewControllerAnimated: YES ];  //返回根控制器,即最开始的页面
 ```
 
@@ -59,7 +39,6 @@ newC.tabBarItem.image = [UIImage imageNamed:@"new.png"];
 //在oldC中调用:
 [ self presentViewController:newC animated: YES completion:nil];
 //[self presentModalViewController:control animated:YES];
-
 //在newC中调用:
 [ self dismissViewControllerAnimated: YES completion: nil ];
 //[self dismissModalViewControllerAnimated:YES];
