@@ -1,3 +1,4 @@
+## for Android: ViewPager | ViewPager的使用
 ```java
 //定义PagerAdapter适配器类
 private class MyPagerAdapter extends FragmentStatePagerAdapter {
@@ -24,8 +25,8 @@ private class MyPagerAdapter extends FragmentStatePagerAdapter {
 }
 
 //定义viewpager切换动画类
-//position可能的值 [-Infinity,-1), [-1,0], (0,1], [1,Infinity]
 /*
+position可能的值 [-Infinity,-1), [-1,0], (0,1], [1,Infinity]
 a 是第一页
 b 是第二页
 当前页为 a, 当 a 向左滑动,直到滑到 b 时:
