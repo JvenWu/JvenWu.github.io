@@ -11,4 +11,15 @@ class ProjectUpdateBroadcastReceive extends BroadcastReceiver {
 		}
 	}
 }
+
+//注册广播
+IntentFilter intentFilter = new IntentFilter();
+intentFilter.addAction(TaskModifyActivity.ACTION_CREATE_TASK);
+updateReceive = new ProjectUpdateBroadcastReceive();
+getActivity().registerReceiver(updateReceive, intentFilter);
+
+//发送广播
+Intent intentBroadCast = new Intent();
+intentBroadCast.setAction(TaskModifyActivity.ACTION_CREATE_TASK);
+sendBroadcast(intentBroadCast);
 ```
