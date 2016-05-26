@@ -2,26 +2,26 @@
 ```java
 //定义PagerAdapter适配器类
 private class MyPagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
+    public ScreenSlidePagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
 
-        @Override
-        public Fragment getItem(int position) {
-            MyFragment fm = null;
-            switch(position){
-                case 0:
-                    break;
-                case 1:
-                    break;
-            }
-            return fm;
+    @Override
+    public Fragment getItem(int position) {
+        MyFragment fm = null;
+        switch(position){
+            case 0:
+                break;
+            case 1:
+                break;
         }
+        return fm;
+    }
 
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
+    @Override
+    public int getCount() {
+        return NUM_PAGES;
+    }
 }
 
 //定义viewpager切换动画类
