@@ -46,7 +46,7 @@ public class CustomTitleView extends View {
 	}
 	
 	public CustomTitleView(Context context,AttributeSet attrs){
-		this(context, attrs, 0);
+	    this(context, attrs, 0);
 	}
 	
 	public CustomTitleView(Context context,AttributeSet attrs,int defStyle){
