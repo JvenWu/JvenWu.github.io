@@ -6,7 +6,8 @@ class ProjectUpdateBroadcastReceive extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		String actionStr = intent.getAction();
 		if (TaskModifyActivity.ACTION_CREATE_TASK.equals(actionStr)) {
-			mPtrFrameLayout.autoRefresh(false);
+			//TODU
+			//mPtrFrameLayout.autoRefresh(false);
 		}
 	}
 }
