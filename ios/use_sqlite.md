@@ -9,7 +9,21 @@ REAL : 浮点值
 TEXT : 文本字符串
 BLOB : 二进制数据（比如文件）
 */
-//模拟器路径: /Users/username/Library/Application Support/iPhone Simulator/
+/*
+//App主目录
+NSString *path = NSHomeDirectory();
+NSLog(@"NSHomeDirectory: %@",path);
+
+//App主目录
+NSString *userName = NSUserName();
+NSString *rootPath = NSHomeDirectoryForUser(userName);
+NSLog(@"NSHomeDirectoryForUser: %@",rootPath);
+
+//Documents目录
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+NSString *documentsDirectory=[paths objectAtIndex:0];//Documents目录
+NSLog(@"NSDocumentDirectory: %@",documentsDirectory);
+*/
 
 @interface ViewController ()
 {
