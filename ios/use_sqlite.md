@@ -28,14 +28,16 @@ BLOB : 二进制数据（比如文件）
     [super viewDidLoad];
 
     //获取沙盒中的数据库文件名
-    NSString * fileName=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject] stringByAppendingPathComponent:@"Fugitive.sqlite"];
+    NSString * fileName=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)
+        lastObject] stringByAppendingPathComponent:@"Fugitive.sqlite"];
     NSLog(@"fileName = %@",fileName);
     //创建或打开数据库，如果数据库文件不存在会自动创建
     int result=sqlite3_open(fileName.UTF8String, &_db);
     if (result==SQLITE_OK) {
         NSLog(@"成功打开数据库");
         //创建表
-        const charchar *sql = "create table if not exists t_Fugitive (id integer primary key autoincrement, name text, age integer);";
+        const charchar *sql = "create table if not exists t_Fugitive (id integer primary key autoincrement, 
+            name text, age integer);";
         charchar *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
