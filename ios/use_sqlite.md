@@ -1,6 +1,5 @@
 ## for IOS: How to use SQLite database | SQLite数据库
 ```objectivec
-
 //SQLite 官方文档 https://www.sqlite.org
 /*
 SQLite存储类型
@@ -36,8 +35,8 @@ BLOB : 二进制数据（比如文件）
     if (result==SQLITE_OK) {
         NSLog(@"成功打开数据库");
         //创建表
-        const charchar *sql = "create table if not exists t_Fugitive (id integer primary key autoincrement, 
-            name text, age integer);";
+        const charchar *sql = "create table if not exists t_Fugitive (id INTEGER primary key autoincrement,
+            name TEXT, desc TEXT, bounty REAL);";
         charchar *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
@@ -56,9 +55,9 @@ BLOB : 二进制数据（比如文件）
 - (IBAction)insertData {
     for (int i=0; i<5; i++) {
         NSString *name =[NSString stringWithFormat:@"Fugitive－%d",i];
-        int age = i;
-        NSString *sql = [NSString stringWithFormat:@"insert into t_Fugitive (name, age) values('%@', %d);",
-            name, age];
+        int bounty = i;
+        NSString *sql = [NSString stringWithFormat:@"insert into t_Fugitive (name, bounty) values('%@', %d);",
+            name, bounty];
         charchar *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
@@ -73,20 +72,10 @@ BLOB : 二进制数据（比如文件）
  *  删除数据
  */
 - (IBAction)deleteData {
-    const charchar *sql = "delete from t_Fugitive where age = 3;";
-    //定义一个stmt存放结果集
-    sqlite3_stmt *stmt=NULL;
-    //检测SQL语句的合法性
-    int result =sqlite3_prepare_v2(_db, sql, -1, &stmt, NULL);
-    if (result ==SQLITE_OK) {
-        //执行SQL语句，从结果集中取出数据
-        while (sqlite3_step(stmt)==SQLITE_ROW) { //获得这行对应的数据
-            //获得第0列的id
-            int sid=sqlite3_column_int(stmt, 0);
-            //获得第1列的name
-            const unsigned charchar * sname=sqlite3_column_text(stmt, 1);
-            NSLog(@"%d %s %d",sid,sname);
-        }
+    const charchar *sql = "delete from t_Fugitive where id = 3;";
+    charchar *errorMessage=NULL;
+    int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
+    if (result==SQLITE_OK) {
         NSLog(@"删除成功！");
     }else{
         NSLog(@"删除失败！");
@@ -97,20 +86,10 @@ BLOB : 二进制数据（比如文件）
  *  更新数据
  */
 - (IBAction)updateData {
-    const charchar *sql = "update t_Fugitive set name = ‘abc’, age = 20 ;";
-    //定义一个stmt存放结果集
-    sqlite3_stmt *stmt=NULL;
-    //检测SQL语句的合法性
-    int result =sqlite3_prepare_v2(_db, sql, -1, &stmt, NULL);
-    if (result ==SQLITE_OK) {
-        //执行SQL语句，从结果集中取出数据
-        while (sqlite3_step(stmt)==SQLITE_ROW) { //获得这行对应的数据
-            //获得第0列的id
-            int sid=sqlite3_column_int(stmt, 0);
-            //获得第1列的name
-            const unsigned charchar * sname=sqlite3_column_text(stmt, 1);
-            NSLog(@"%d %s %d",sid,sname);
-        }
+    const charchar *sql = "update t_Fugitive set name = ‘abc’, bounty = 20 ;";
+    charchar *errorMessage=NULL;
+    int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
+    if (result==SQLITE_OK) {
         NSLog(@"更新成功！");
     }else{
         NSLog(@"更新失败！");
