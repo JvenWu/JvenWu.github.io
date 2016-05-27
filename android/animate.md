@@ -1,5 +1,6 @@
 ## for Android: Animate | 动画
 ```java
+加载xml补间动画
 //xml定义动画
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android" >
