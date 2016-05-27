@@ -25,6 +25,7 @@ NSString *documentsDirectory=[paths objectAtIndex:0];//Documents目录
 NSLog(@"NSDocumentDirectory: %@",documentsDirectory);
 */
 
+#import <sqlite3.h>
 @interface ViewController ()
 {
     sqlite3 *_db;  //数据库
