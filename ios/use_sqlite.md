@@ -36,9 +36,9 @@ BLOB : 二进制数据（比如文件）
     if (result==SQLITE_OK) {
         NSLog(@"成功打开数据库");
         //创建表
-        const charchar *sql = "create table if not exists t_Fugitive (id INTEGER primary key autoincrement,
+        const char *sql = "create table if not exists t_Fugitive (id INTEGER primary key autoincrement,
             name TEXT, desc TEXT, bounty REAL);";
-        charchar *errorMessage=NULL;
+        char *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
             NSLog(@"成功创建表");
@@ -59,7 +59,7 @@ BLOB : 二进制数据（比如文件）
         int bounty = i;
         NSString *sql = [NSString stringWithFormat:@"insert into t_Fugitive (name, bounty) 
             values('%@', %d);",name, bounty];
-        charchar *errorMessage=NULL;
+        char *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
             NSLog(@"成功添加数据");
@@ -73,8 +73,8 @@ BLOB : 二进制数据（比如文件）
  *  删除数据
  */
 - (IBAction)deleteData {
-    const charchar *sql = "delete from t_Fugitive where id = 3;";
-    charchar *errorMessage=NULL;
+    const char *sql = "delete from t_Fugitive where id = 3;";
+    char *errorMessage=NULL;
     int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
     if (result==SQLITE_OK) {
         NSLog(@"删除成功！");
@@ -87,8 +87,8 @@ BLOB : 二进制数据（比如文件）
  *  更新数据
  */
 - (IBAction)updateData {
-    const charchar *sql = "update t_Fugitive set name = ‘abc’, bounty = 20 ;";
-    charchar *errorMessage=NULL;
+    const char *sql = "update t_Fugitive set name = ‘abc’, bounty = 20 ;";
+    char *errorMessage=NULL;
     int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
     if (result==SQLITE_OK) {
         NSLog(@"更新成功！");
@@ -101,7 +101,7 @@ BLOB : 二进制数据（比如文件）
  *  查询数据
  */
 - (IBAction)queryData {
-    const charchar *sql = "select id, name, age from t_Fugitive where name = ?;";
+    const char *sql = "select id, name, age from t_Fugitive where name = ?;";
     //定义一个stmt存放结果集
     sqlite3_stmt *stmt=NULL;
     //检测SQL语句的合法性
@@ -113,7 +113,7 @@ BLOB : 二进制数据（比如文件）
             //获得第0列的id
             int sid=sqlite3_column_int(stmt, 0);
             //获得第1列的name
-            const unsigned charchar * sname=sqlite3_column_text(stmt, 1);
+            const unsigned char * sname=sqlite3_column_text(stmt, 1);
             NSLog(@"%d %s %d",sid,sname);
         }
     }else{
