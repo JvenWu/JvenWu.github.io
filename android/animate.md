@@ -69,7 +69,10 @@ RotateAnimation rs = new RotateAnimation(0,360,100,100);
 pivotXValue 传0.5时, 原来左侧位置 + 0.5 * view宽度
 pivotYValue 传0.5时, 原来顶部位置 + 0.5 * view宽度
 */
-RotateAnimation ra = new RotateAnimation(0, 720, Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF, 0.5f);
+RotateAnimation ra = new RotateAnimation(
+    0, 720, 
+    Animation.RELATIVE_TO_SELF, 0.5f,
+    Animation.RELATIVE_TO_SELF, 0.5f);
 ra.setDuration(2000);
 ra.setRepeatCount(1);
 ra.setRepeatMode(Animation.REVERSE);
