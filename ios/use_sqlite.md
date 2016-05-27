@@ -9,6 +9,7 @@ REAL : 浮点值
 TEXT : 文本字符串
 BLOB : 二进制数据（比如文件）
 */
+//模拟器路径: /Users/username/Library/Application Support/iPhone Simulator/
 
 @interface ViewController ()
 {
