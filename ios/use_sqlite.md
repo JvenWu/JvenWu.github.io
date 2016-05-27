@@ -57,7 +57,8 @@ BLOB : 二进制数据（比如文件）
     for (int i=0; i<5; i++) {
         NSString *name =[NSString stringWithFormat:@"Fugitive－%d",i];
         int age = i;
-        NSString *sql = [NSString stringWithFormat:@"insert into t_Fugitive (name, age) values('%@', %d);", name, age];
+        NSString *sql = [NSString stringWithFormat:@"insert into t_Fugitive (name, age) values('%@', %d);",
+            name, age];
         charchar *errorMessage=NULL;
         int result=sqlite3_exec(_db, sql.UTF8String, NULL, NULL, &errorMessage);
         if (result==SQLITE_OK) {
