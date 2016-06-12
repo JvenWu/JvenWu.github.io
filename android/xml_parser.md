@@ -1,18 +1,21 @@
 ## for Android: Xml Parser | Xml 解析
 XML解析三种方式
 
-DOM
+1.DOM
+
 通用性强，它会将XML文件的所有内容读取到内存中，然后允许您使用DOM API遍历XML树、检索所需的数据；
 简单直观，但需要将文档读取到内存，并不太适合移动设备；
 
-SAX
+2.SAX
+
 SAX是一个解析速度快并且占用内存少的xml解析器；
 采用事件驱动，它并不需要解析整个文档；
 实现：继承DefaultHandler，覆写startElement、endElement、characters等方法；
 
-PULL
-Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同的是PULL事件返回的是数值型；推荐使用。
+3.PULL
 
+Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同的是PULL事件返回的是数值型；推荐使用。
+### DOM解析
 >DOM解析常用类型
 - Document    文档对象
 - NodeList    节点集合
@@ -63,6 +66,7 @@ try {
 } catch (Exception e) {
 }
 ```
+### SAX解析
 >SAX解析常用事件
 - startDocument() 读到文档开始时触发事件
 - endDocument() 读到文档结束时触发事件
@@ -148,7 +152,7 @@ public class IotHandler extends DefaultHandler {
     }
 }
 ```
-
+### PULL解析
 PULL是根据不同的事件触发来解析的
 
 >常用的事件类型有
