@@ -1,5 +1,6 @@
 ## for Android: Xml Parser | Xml 解析
 XML解析三种方式
+
 DOM
 通用性强，它会将XML文件的所有内容读取到内存中，然后允许您使用DOM API遍历XML树、检索所需的数据；
 简单直观，但需要将文档读取到内存，并不太适合移动设备；
@@ -17,6 +18,7 @@ Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同�
 - NodeList    节点集合
 - Node        节点
 - Element     元素
+
 ```java
 //从sdCard读入文件流
 InputStream stream = getInputStreamFromSDcard("temp_book.xml");
