@@ -16,6 +16,7 @@ Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同�
 - NodeList    节点集合
 - Node        节点
 - Element     元素
+
 要解析的xml文件
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
