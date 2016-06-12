@@ -17,7 +17,7 @@ Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同�
 - NodeList    节点集合
 - Node        节点
 - Element     元素
-
+```java
 //从sdCard读入文件流
 InputStream stream = getInputStreamFromSDcard("temp_book.xml");
 // 创建DOM工厂对象
@@ -60,15 +60,16 @@ try {
     stream.close();
 } catch (Exception e) {
 }
-
-SAX解析常用事件
-startDocument() 读到文档开始时触发事件
-endDocument() 读到文档结束时触发事件
-startElement() 读到标签开始时触发事件
-endElement() 读到标签结束时触发事件
-characters() 读到文档字符数据时触发事件。哪怕是空白区域，也会触发这个方法。
+```
+>SAX解析常用事件
+- startDocument() 读到文档开始时触发事件
+- endDocument() 读到文档结束时触发事件
+- startElement() 读到标签开始时触发事件
+- endElement() 读到标签结束时触发事件
+- characters() 读到文档字符数据时触发事件。哪怕是空白区域，也会触发这个方法。
 
 SAX解析器
+```java
 public class IotHandler extends DefaultHandler {
     private static final String TAG = "IotHandler";
     public static final String strUrl = "http://blog.csdn.net/liudehuaii18/rss/list";
@@ -144,27 +145,30 @@ public class IotHandler extends DefaultHandler {
         return  stream;
     }
 }
-
+```
 
 PULL是根据不同的事件触发来解析的
 
-常用的事件类型有
-START_DOCUMENT
-END_DOCUMENT
-START_TAG
-END_TAG
+>常用的事件类型有
+- START_DOCUMENT
+- END_DOCUMENT
+- START_TAG
+- END_TAG
 
 通过getEventType()可获得解析事件
 next()或nextText()可移动到下一解析事件，并返回解析事件类型
 
 要解析的xml文件
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <books>
     <book price = "20">Hahaha</book>
     <book price = "21">Wawawa</book>
 </books>
+```
 
 使用XmlPullParser类的解析方式：
+```java
 new Thread(new Runnable() {
     @Override
     public void run() {
@@ -202,8 +206,9 @@ new Thread(new Runnable() {
         }
     }
 }).start();
-
+```
 使用XmlResourceParser类的解析方式
+```java
 //从res/xml/book.xml中读取
 XmlResourceParser resourceParser = getResources().getXml(R.xml.book);
 try {
@@ -230,3 +235,4 @@ try {
     Log.d(TAG, "getXMLFromResXml()->data: " + sb.toString());
 } catch (Exception e) {
 }
+```
