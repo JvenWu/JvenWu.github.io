@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GitHub入门指南</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fast dependency injector for Android and Java">
+    <link href="static/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="static/app.css" rel="stylesheet">
+    <link href="static/app-theme.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="static/html5shiv.min.js"></script><![endif]-->
+</head>
+<body data-target=".content-nav">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="span5">
+                  <h1>GitHub入门指南</h1>
+                </div>
+                <div class="span7">
+                    <menu>
+                        <ul>
+                            <li><a href="http://github.com" data-title="View GitHub Project" class="menu github">
+                                <img src="static/icon-github.png" alt="GitHub"/></a></li>
+                            <li><a href="http://jvenwu.github.io/" data-title="Open Source Portal" class="menu">
+                                <img src="static/kiss.png" alt=" Kiss"/></a></li>
+                        </ul>
+                    </menu>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="subtitle">
+      <div class="container">
+        <div class="row">
+            <div class="span12">
+              <h2><strong>GitHub</strong> 常用命令操作</h2>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="body">
+      <div class="container">
+        <div class="row">
+          <div class="span9">
+            <h3 id="introduction">简介</h3>
+
+            <p>通过GitHub命令行操作，可以更快捷的进行相关Git版本管理，
+              同时也是使用Linux的用户必备的技能。</p>
+
+              <h3 id="create">创建仓库</h3>
+              <p>一个仓库通常用来组织一个项目。仓库可以包含文件夹和文件、图片、视频等工程所需的任何东西。一般建议包含一个README文件来简单介绍工程信息。</p>
+              <h4>创建远程仓库</h4>
+              <p>使用<a href="https://github.com">GitHub</a>必须先去其官网注册个账号，这里使用命令行操作，需要去官网下载客户端。然后在<em>终端/命令行工具</em>中输入命令</p>
+              <pre class="prettyprint">curl -u 'username' https://api.github.com/user/repos -d '{"name":"Test"}'</pre>
+              <p><span class="label">注意:</span><em>这里username为你在GitHub上注册的账号，Test为要创建的仓库名。</em></p>
+              <p>回车执行命令后会提示你输入密码，输完密码一切正常就会有返回信息，若创建失败了也会有相应错误信息返回。可参考<a href="https://developer.github.com/v3/repos/#create">官方api文档</a>说明。</p>
+
+              <h4>创建本地仓库</h4>
+              <p>创建完远程仓库后我们需要在本地创建一个仓库与远程的那个仓库关联。先在本地创建一个和远程仓库同名的文件夹，cd到文件夹。</p>
+              <p>输入初始化本地仓库命令</p>
+              <pre class="prettyprint">git init</pre>
+              <p>初始化文件夹后可把文件夹中的文件或文件夹添加到版本控制中，
+                以便后面提交到远程仓库</p>
+                <h3 id="add">添加文件到版本控制</h3>
+                <p>例：添加README.md文件到版本控制中</p>
+                <pre class="prettyprint">git add README.md</pre>
+                <p>提交到本地仓库，并写一些注释</p>
+                <pre class="prettyprint">git commit -m “first commit”</pre>
+                <p>通过远程仓库地址连接到远程仓库并建一个叫origin的别名(以下有两种方式)</p>
+                <pre class="prettyprint">ssh的方式
+                  git remote add origin git@github.com:YourName/Test.git
+
+                  https的方式
+                  git remote add origin https://github.com/YourName/Test.git
+                </pre>
+                <p>将本地仓库提交到地址是origin的地址，master分支下</p>
+
+                <pre class="prettyprint">git push -u origin master</pre>
+                <p><span class="label">注意:</span><em> -u表示将远程仓库和本地仓库建立起关联，这样就可以直接使用git pull和git push命令</em></p>
+
+
+
+                <h3 id="modify">修改配置信息</h3>
+                <p>查看配置信息</p>
+                <pre class="prettyprint">查看全局配置信息
+                  git config --global -e
+
+                  查看本地配置信息
+                  git config --local -e</pre>
+                  <p>配置全局用户名和邮件地址</p>
+                  <pre class="prettyprint">git config --global user.name "Your Name"
+                    git config --global user.email you@email.com</pre>
+
+
+
+                    <h3 id="revert">还原操作</h3>
+                    <p>撤消修改和还原版本，只能还原还没有提交的文件</p>
+                    <pre class="prettyprint">git checkout file.c</pre>
+                    <p>还原最近一次提交的版本</p>
+                    <pre class="prettyprint">git revert HEAD</pre>
+                    <p>还原指定版本的修改，commit-id可以通过git log命令得到</p>
+                    <pre class="prettyprint">git revert commit-id</pre>
+                  </div>
+                  <div class="span3">
+                    <div class="content-nav" data-spy="affix" data-offset-top="80">
+                      <ul class="nav nav-tabs nav-stacked primary">
+                        <li><a href="#introduction">简介</a></li>
+                        <li><a href="#create">创建仓库</a></li>
+                        <li><a href="#add">添加文件到版本控制</a></li>
+                        <li><a href="#modify">修改配置信息</a></li>
+                        <li><a href="#revert">还原指定版本</a></li>
+                        <!-- <li><a href="#license">License</a></li> -->
+                      </ul>
+                      <ul class="nav nav-pills nav-stacked secondary">
+                        <li><a href="">Javadoc</a></li>
+                        <li><a href="">discuss@</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="span12 logo">
+                    <a href=""><img src="static/kiss.png" alt="My, Inc."/></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script src="static/bootstrap.min.js"></script>
+            <script src="static/jquery.smooth-scroll.min.js"></script>
+            <script src="static/jquery-maven-artifact.min.js"></script>
+            <script src="static/prettify.js"></script>
+            <script type="text/javascript">
+                $(function() {
+                  // Syntax highlight code blocks.
+                  prettyPrint();
+
+                  // Spy on scroll position for real-time updating of current section.
+                  $('body').scrollspy();
+
+                  // Use smooth-scroll for internal links.
+                  $('a').smoothScroll();
+
+                  // Enable tooltips on the header nav image items.
+                  $('.menu').tooltip({
+                    placement: 'bottom',
+                    trigger: 'hover',
+                    container: 'body',
+                    delay: {
+                      show: 500,
+                      hide: 0
+                    }
+                  });
+                });
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-40704740-3']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+    </body>
+</html>
