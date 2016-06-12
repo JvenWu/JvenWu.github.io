@@ -80,7 +80,7 @@ try {
 - endDocument() 读到文档结束时触发事件
 - startElement() 读到标签开始时触发事件
 - endElement() 读到标签结束时触发事件
-- characters() 读到文档字符数据时触发事件。哪怕是空白区域，也会触发这个方法。
+- characters() 读到文档字符数据时触发事件，空字符，也会触发这个事件
 
 SAX解析器
 ```java
