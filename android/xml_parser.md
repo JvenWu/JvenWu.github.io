@@ -29,6 +29,7 @@ Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同�
     </book>
 </books>
 ```
+解析主代码
 ```java
 //从sdCard读入文件流
 InputStream stream = getInputStreamFromSDcard("temp_book.xml");
