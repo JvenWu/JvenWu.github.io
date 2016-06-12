@@ -16,7 +16,18 @@ Android自带的XML解析器，和SAX基本类似，也是事件驱动，不同�
 - NodeList    节点集合
 - Node        节点
 - Element     元素
-
+要解析的xml文件
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+    <book price = "20">
+        <name>Wawawa 1</name>
+    </book>
+    <book price = "21">
+        <name>Wawawa 2</name>
+    </book>
+</books>
+```
 ```java
 //从sdCard读入文件流
 InputStream stream = getInputStreamFromSDcard("temp_book.xml");
