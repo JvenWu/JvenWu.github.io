@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tag Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fast dependency injector for Android and Java">
+    <link href="static/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="static/app.css" rel="stylesheet">
+    <link href="static/app-theme.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="static/html5shiv.min.js"></script><![endif]-->
+</head>
+<body data-target=".content-nav">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="span5">
+                  <h1>Main Title</h1>
+                </div>
+                <div class="span7">
+                    <menu>
+                        <ul>
+                            <li><a href="http://github.com" data-title="View GitHub Project" class="menu github">
+                                <img src="static/icon-github.png" alt="GitHub"/></a></li>
+                            <li><a href="http://jvenwu.github.io/" data-title="Open Source Portal" class="menu">
+                                <img src="static/kiss.png" alt=" Kiss"/></a></li>
+                        </ul>
+                    </menu>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="subtitle">
+      <div class="container">
+        <div class="row">
+            <div class="span12">
+              <h2><strong>SubTitle</strong> Area</h2>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="body">
+      <div class="container">
+        <div class="row">
+          <div class="span9">
+            <h3 id="introduction">简介</h3>
+            <p>introduction area</p>
+            <pre class="prettyprint">code area</pre>
+            <p><span class="label">注意:</span><em> notic area</em></p>
+          </div>
+          <div class="span3">
+            <div class="content-nav" data-spy="affix" data-offset-top="80">
+              <ul class="nav nav-tabs nav-stacked primary">
+                <li><a href="#introduction">简介</a></li>
+                <!-- <li><a href="#license">License</a></li> -->
+              </ul>
+              <ul class="nav nav-pills nav-stacked secondary">
+                <li><a href="">Javadoc</a></li>
+                <li><a href="">discuss@</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12 logo">
+            <a href=""><img src="static/kiss.png" alt="My, Inc."/></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/jquery.smooth-scroll.min.js"></script>
+    <script src="static/jquery-maven-artifact.min.js"></script>
+    <script src="static/prettify.js"></script>
+    <script type="text/javascript">
+        $(function() {
+          // Syntax highlight code blocks.
+          prettyPr
+          // Spy on scroll position for real-time updating of current section.
+          $('body').scroll
+          // Use smooth-scroll for internal links.
+          $('a').smoothScr
+          // Enable tooltips on the header nav image items.
+          $('.menu').tooltip({
+            placement: 'bottom',
+            trigger: 'hover',
+            container: 'body',
+            delay: {
+              show: 500,
+              hide: 0
+            }
+          });
+     
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-40704740-3']);
+        _gaq.push(['_trackPagevi
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </body>
+</html>
