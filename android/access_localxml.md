@@ -8,8 +8,8 @@
 ```java
 InputStream inputStream = getResources().getAssets().open(fileName);
 ```
-示例
 ```java
+//示例
 private InputStream getXMLStreamFromAssets(String fileName) {
     InputStream stream = null;
     try {
@@ -52,8 +52,8 @@ private InputStream getXMLStreamFromAssets(String fileName) {
 ```java
 XmlResourceParser resourceParser = getResources().getXml(R.xml.book);
 ```
-示例
 ```java
+//示例
 private void getXMLFromRes() {
     XmlResourceParser resourceParser = getResources().getXml(R.xml.book);
     try {
@@ -86,8 +86,8 @@ private void getXMLFromRes() {
 ```java
 InputStream inputStream = getResources().openRawResource(R.raw.book2);
 ```
-示例
 ```java
+//示例
 private InputStream getXMLFromRaw(){
     InputStream stream = null;
     try{
@@ -127,11 +127,12 @@ private InputStream getXMLFromRaw(){
 }
 ```
 ### 在SDcard卡里
-添加SDcard读写权限
 ```xml
+<!-- 添加SDcard读写权限 -->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 ```java
+//示例
 private InputStream getInputStreamFromSDcard(String fileName){
     InputStream stream = null;
     try {
