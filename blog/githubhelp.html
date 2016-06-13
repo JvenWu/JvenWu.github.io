@@ -76,16 +76,6 @@ git remote add origin git@github.com:YourName/Test.git
 
 https的方式
 git remote add origin https://github.com/YourName/Test.git</pre>
-<pre class="prettyprint">@Module
-class DripCoffeeModule {
-  @Provides Heater provideHeater() {
-    return new ElectricHeater();
-  }
-
-  @Provides Pump providePump(Thermosiphon pump) {
-    return pump;
-  }
-}</pre>
                 <p>将本地仓库提交到地址是origin的地址，master分支下</p>
 
                 <pre class="prettyprint">git push -u origin master</pre>
@@ -94,10 +84,10 @@ class DripCoffeeModule {
                 <h3 id="modify">修改配置信息</h3>
                 <p>查看配置信息</p>
                 <pre class="prettyprint">查看全局配置信息
-                  git config --global -e
+git config --global -e
 
-                  查看本地配置信息
-                  git config --local -e</pre>
+查看本地配置信息
+git config --local -e</pre>
                   <p>配置全局用户名和邮件地址</p>
                   <pre class="prettyprint">git config --global user.name "Your Name"
 git config --global user.email you@email.com</pre>
