@@ -127,6 +127,10 @@ private InputStream getXMLFromRaw(){
 }
 ```
 ### 在SDcard卡里
+添加SDcard读写权限
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
 ```java
 private InputStream getInputStreamFromSDcard(String fileName){
     InputStream stream = null;
