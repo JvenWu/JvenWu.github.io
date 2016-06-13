@@ -41,7 +41,7 @@ private InputStream getXMLStreamFromAssets(String fileName) {
             }
             type = pullParser.next();
         }
-        Log.d(TAG, "run()->data: " + sb.toString());
+        Log.d(TAG, "getXMLStreamFromAssets()->data: " + sb.toString());
     }catch (Exception e){
         Log.d(TAG, "Exception()->data parse: " + e.toString());
     }
@@ -77,7 +77,7 @@ private void getXMLFromRes() {
             //下一条记录
             resourceParser.next();
         }
-        Log.d(TAG, "getXMLFromResXml()->data: " + sb.toString());
+        Log.d(TAG, "getXMLFromRes()->data: " + sb.toString());
     } catch (Exception e) {
     }
 }
@@ -119,7 +119,7 @@ private InputStream getXMLFromRaw(){
             }
             type = pullParser.next();
         }
-        Log.d(TAG, "run()->data: " + sb.toString());
+        Log.d(TAG, "getXMLFromRaw()->data: " + sb.toString());
     }catch (Exception e){
         Log.d(TAG, "Exception()->data parse: " + e.toString());
     }
