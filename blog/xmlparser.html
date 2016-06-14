@@ -69,7 +69,7 @@
             </ul>
             <p>要解析的xml文件</p>
             <pre class="prettyprint">
-&lt;?xml version="1.0" encoding="utf-8">
+&lt;?xml version="1.0" encoding="utf-8"?>
 &lt;books>
     &lt;book price = "20">
         &lt;name>Wawawa 1&lt;/name>
@@ -77,7 +77,7 @@
     &lt;book price = "21">
         &lt;name>Wawawa 2&lt;/name>
     &lt;/book>
-&lt;/books>"
+&lt;/books>
             </pre>
             <p>解析主代码</p>
             <pre class="prettyprint">
@@ -224,11 +224,11 @@ public class IotHandler extends DefaultHandler {
             <p>通过getEventType()可获得解析事件 next()或nextText()可移动到下一解析事件，并返回解析事件类型</p>
             <p>要解析的xml文件</p>
             <pre class="prettyprint">
-"<?xml version="1.0" encoding="utf-8">
-<books>
-    <book price = "20">Hahaha</book>
-    <book price = "21">Wawawa</book>
-</books>"
+&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;books>
+    &lt;book price = "20">Hahaha&lt;/book>
+    &lt;book price = "21">Wawawa&lt;/book>
+&lt;/books>
             </pre>
             <h4>使用XmlPullParser类的解析方式</h4>
             <pre class="prettyprint">
