@@ -9,7 +9,7 @@ gson是google提供的一个处理json的项目，使用它可以方便地处理
 - JsonParser解析json
 
 #### 对象转json、集合转json
-当进行对象转json时，json的键为对象的字段名
+当进行对象转json时，json的键为对象的字段名  
 若Pserson为
 ```java
 class Person{
