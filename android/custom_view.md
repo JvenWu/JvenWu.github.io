@@ -165,7 +165,7 @@ public class CustomTitleView extends View {
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 	
-    <com.zkbr.demo.CustomTitleView 
+    <com.6kgo.demo.CustomTitleView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -378,7 +378,7 @@ public class TitleImageMenu extends View {
 
 ```xml
 activity_main.xml
-<com.zkbr.demo.TitleImageMenu
+<com.6kgo.demo.TitleImageMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         custom:titleText="dlrow olleh"
