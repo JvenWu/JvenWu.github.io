@@ -68,6 +68,9 @@ jstring
 Java_net_kgo_jvennote_FFmpegDemoActivity_stringFromJNI( JNIEnv* env,
                                                   jobject thiz )
 ```
+或者根据Java对于C语言接口的定义，生成相应的接口函数声明。这一步需要用到JDK中的 "javah" 命令  
+首先切换到 java 文件所在目录下，输入命令：javah 包名.类名，在当前目录生成.h头文件，如下命令：  
+javah net.kgo.jvennote.FFmpegDemoActivity
 
 2.使用JNI_OnLoad初始化  
 JNI_OnLoad可以和JNIEnv的registerNatives函数结合起来，实现动态的函数替换。  
