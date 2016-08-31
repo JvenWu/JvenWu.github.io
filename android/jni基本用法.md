@@ -43,7 +43,7 @@ android {
 }
 ```
 
-3.问题三：运行时报 C 文件中的 undefined reference to ...，或正确引入头文件还提示找不到头文件时
+3.问题三：运行时报 C 文件中的 undefined reference to ...，或正确引入头文件还提示找不到头文件时  
 解决：  
 在 build.gradle 中加
 ```
