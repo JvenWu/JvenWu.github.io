@@ -43,6 +43,40 @@ android {
 }
 ```
 
+3.问题三：运行时报 C 文件中的 undefined reference to ... 时  
+解决：  
+在 build.gradle 中加
+```
+android {
+    ...
+    sourceSets {
+        main {
+            jni.srcDirs = []
+        }
+    }
+}
+```
+
+4.问题四：运行时提示错误  
+Cannot load library: soinfo_link_image(linker.cpp:1635):  
+could not load library "libavcodec-56.so" needed by "libhello-jni.so";  
+caused by load_library(linker.cpp:745): library "libavcodec-56.so" not found  
+解决：  
+该错误为加载动态库时顺序错误所致，须先加载被依赖的动态库，如下
+```java
+static{
+    System.loadLibrary("avcodec-56"); //先加载libavcodec-56.so,被依赖的
+    System.loadLibrary("hello-jni");  //后加载libhello-jni.so
+}
+```
+一般对于4.2的Android系统才要这样显示的加载被依赖的动态库，其它系统在Android.mk文件中指定
+```java
+static{
+    //只须加载libhello-jni.so,依赖库已在.mk指定
+    System.loadLibrary("hello-jni");
+}
+```
+
 #### 在Java文件中调用jni函数
 须先加载动态库、并用native声明方法
 
