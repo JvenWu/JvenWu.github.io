@@ -58,7 +58,7 @@ TranslateAnimation ta = new TranslateAnimation(
 ta.setDuration(2000);
 ta.setRepeatCount(1);
 ta.setRepeatMode(Animation.REVERSE);
-ta.setFillAfter(false);
+ta.setFillAfter(false); //当设置为true时动画结束后不返回原点
 mSwitchPhoto.startAnimation(ta);
 
 //旋转动画
