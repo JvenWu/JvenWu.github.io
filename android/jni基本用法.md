@@ -160,8 +160,93 @@ jint JNI_OnLoad(JavaVM * vm, void *reserved)
 ```
 
 #### 示例
-**hello-jni.c**
+**文件目录**
+```c
+jni
+ |--include(里面为对应的头文件)
+ |      |--libavcodec
+ |      |--libavdevice
+ |      |--libavfilter
+ |      |--libavformat
+ |      |--libavutil
+ |      |--libpostproc
+ |      |--libswresample
+ |      |--libswscale
+ |--Android.mk
+ |--Application.mk
+ |--hello-jni.c
+ |--libavcodec-56.so
+ |--libavdevice-56.so
+ |--libavfilter-5.so
+ |--libavformat-56.so
+ |--libavutil-54.so
+ |--libpostproc-53.so
+ |--libswresample-1.so
+ |--libswscale-3.so
+```
+**Android.mk**
+```c
+    LOCAL_PATH := $(call my-dir)  
+      
+    # FFmpeg library
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := avutil
+    LOCAL_SRC_FILES := libavutil-54.so
+    include $(PREBUILT_SHARED_LIBRARY)
 
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := swresample
+    LOCAL_SRC_FILES := libswresample-1.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := avcodec
+    LOCAL_SRC_FILES := libavcodec-56.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := avformat
+    LOCAL_SRC_FILES := libavformat-56.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := swscale
+    LOCAL_SRC_FILES := libswscale-3.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := postproc
+    LOCAL_SRC_FILES := libpostproc-53.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := avfilter
+    LOCAL_SRC_FILES := libavfilter-5.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := avdevice
+    LOCAL_SRC_FILES := libavdevice-56.so
+    include $(PREBUILT_SHARED_LIBRARY)
+
+    # Program  
+    include $(CLEAR_VARS)  
+    LOCAL_MODULE := hello-jni  
+    LOCAL_SRC_FILES := hello-jni.c  
+    LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
+    LOCAL_LDLIBS := -llog -lz -ldl
+    LOCAL_SHARED_LIBRARIES := avutil swresample avcodec avformat swscale postproc avfilter avdevice
+    include $(BUILD_SHARED_LIBRARY)
+```
+**Application.mk**
+```c
+#APP_BUILD_SCRIPT := Android.mk
+
+#APP_ABI := all
+#APP_ABI := armeabi armeabi-v7a x86
+APP_ABI :=armeabi armeabi-v7a
+```
+**hello-jni.c**
 ```c
 #include <string.h>
 #include <stdio.h>
@@ -258,7 +343,6 @@ jint JNI_OnLoad(JavaVM * vm, void *reserved)
     return JNI_VERSION_1_4;
 }
 ```
-
 **FFmpegDemoActivity.java**
 ```java
 public class FFmpegDemoActivity extends BaseActivity {
