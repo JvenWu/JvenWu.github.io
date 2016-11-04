@@ -1,6 +1,6 @@
 ## for React Native 环境配置
 
-选参考官方文档完成基本配置：https://facebook.github.io/react-native/docs/getting-started.html
+先参考官方文档完成基本配置：https://facebook.github.io/react-native/docs/getting-started.html
 
 需要安装的有：
 1. Homebrew
