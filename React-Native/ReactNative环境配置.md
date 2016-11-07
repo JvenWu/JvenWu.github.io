@@ -19,6 +19,10 @@ XCode 6.3 及其以上即可。
 
 3.2 Android  
 设置环境变量：ANDROID_HOME  
+```
+export ANDROID_HOME=~/Library/Android/sdk 
+export PATH=${PATH}:${ANDROID_HOME}/tools
+```
 
 ### 4. 运行项目
 不管是 iOS 还是 Android，在开发调试阶段，都需要在 Mac 上启动一个 HTTP 服务，  
