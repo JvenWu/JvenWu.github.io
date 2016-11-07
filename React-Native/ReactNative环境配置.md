@@ -45,16 +45,20 @@ react-native run-android
 然后就会部署到模拟器，修改 index.android.js ，调出模拟器菜单键，  
 选择重新载入 js 即可看到变化。  
 
-4.3 Android 真机调试
-示例 App 直接部署到真机，会有红色界面报错，提示无法连接到 Debug Server。
-如果是 5.0 或者以上机型，可通过 adb 反向代理端口，将 Mac 端口反向代理到测试机上。
+4.3 Android 真机调试  
+示例 App 直接部署到真机，会有红色界面报错，提示无法连接到 Debug Server。  
+如果是 5.0 或者以上机型，可通过 adb 反向代理端口，将 Mac 端口反向代理到测试机上。  
+```
 命令：adb reverse tcp:8081 tcp:8081
-如果 5.0 以下机器，应用安装到测试机上之后，摇动设备，
-在弹出菜单中选择 Dev Setting > Debug Server host for device，
-然后填入 Mac 的 IP 地址+端口号8081（ifconfig 命令可查看本机 IP）
-如填入192.168.1.3:8081
+```
+如果 5.0 以下机器，应用安装到测试机上之后，摇动设备，  
+在弹出菜单中选择 Dev Setting > Debug Server host for device，  
+然后填入 Mac 的 IP 地址+端口号8081（ifconfig 命令可查看本机 IP）  
+如填入192.168.1.3:8081  
 
-4.4 在 Android Studio 中调试开发
-我们可能希望在 Android Studio 打开项目，然后编译部署到真机。
-这个时候，在命令行启动 Debug Server 即可：
+4.4 在 Android Studio 中调试开发  
+我们可能希望在 Android Studio 打开项目，然后编译部署到真机。  
+这个时候，在命令行启动 Debug Server 即可：  
+```
 react-native start
+```
