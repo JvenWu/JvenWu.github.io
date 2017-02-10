@@ -44,7 +44,7 @@ TranslateAnimation ta = new TranslateAnimation(
 ta.setDuration(2000);
 ta.setRepeatCount(1);
 ta.setRepeatMode(Animation.REVERSE);
-ta.setFillAfter(false); //当设置为true时动画结束后不返回原点
+ta.setFillAfter(false); 
 mSwitchPhoto.startAnimation(ta);
 
 //旋转动画
@@ -115,6 +115,21 @@ mRotatePhoto.startAnimation(set);
 //从xml文件加载动画
 Animation anim1 = AnimationUtils.loadAnimation(getActivity(),R.anim.guide1_faxian_anim);
 myView.setAnimation(anim1);
+
+//Java代码设置
+//动画结束时，停留在最后一帧
+setFillAfter(true);
+setFillBefore(false);  
+
+//动画结束时，停留在第一帧
+setFillAfter(false);
+setFillBefore(true);  
+
+//xml设置如下：
+//动画结束时，停留在最后一帧
+<set android:fillAfter="true" android:fillBefore="false" android:fillEnabled="true">
+//动画结束时，停留在第一帧
+<set android:fillAfter="false" android:fillBefore="true" android:fillEnabled="true">
 
 属性动画:
 //位移
