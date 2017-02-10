@@ -90,7 +90,7 @@ set.addAnimation(ra);
 set.addAnimation(aa);
 mRotatePhoto.startAnimation(set);  
 
-//通过加载xml实现(动画文件在res/anim)
+//加载xml补间动画(动画文件在res/anim)
 //xml定义动画
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android" >
@@ -151,7 +151,7 @@ set.setTarget(mRotatePhoto);
 set.playTogether(oa, oa1, oa2, oa3);//所有动画一起播放
 set.start();
 
-加载xml属性动画:
+//加载xml属性动画:
 //定义xml动画
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
