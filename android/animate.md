@@ -1,7 +1,7 @@
 ## for Android: Animate | 动画
 ```java
 帧动画:
-//定义xml动画文件
+//定义xml动画文件switch_photo.xml
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
                 android:oneshot="false">
     <item android:drawable="@drawable/photo1"
@@ -10,11 +10,18 @@
         android:duration="200"/>
 </animation-list>
 
-//设置动画播放
+//设置动画播放方式1
 ImageView mSwitchPhoto = findViewById(R.id.switch_iv)
 mSwitchPhoto.setBackgroundResource(R.drawable.switch_photo);
 AnimationDrawable ad = (AnimationDrawable) mSwitchPhoto.getBackground();
-ad.start();
+ad.start();  
+
+//设置动画播放方式2
+AnimationDrawable anim = (AnimationDrawable)getResources().getDrawable(R.drawable.switch_photo);  
+textWidget = (TextView)findViewById(R.id.text_widget);  
+textWidget.setText("背景渐变动画效果");  
+textWidget.setBackgroundDrawable(anim);  
+anim.start();
 
 补间动画:
 //位移动画
