@@ -1,26 +1,5 @@
 ## for Android: Animate | 动画
 ```java
-加载xml补间动画:
-//xml定义动画
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android" >
-    <alpha
-        android:duration="500"
-        android:fromAlpha="0.0"
-        android:toAlpha="1.0" />
-    <translate
-        android:duration="500"
-        android:fillAfter="false"
-        android:fromXDelta="150" <!-- 相对于原来位置的偏移 -->
-        android:toXDelta="0" />
-
-</set>
-
-//从xml文件加载动画
-Animation anim1 = AnimationUtils.loadAnimation(getActivity(),R.anim.guide1_faxian_anim);
-myView.setAnimation(anim1);
-
-
 帧动画:
 //定义xml动画文件
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
@@ -109,7 +88,26 @@ set.addAnimation(ta);
 set.addAnimation(sa);
 set.addAnimation(ra);
 set.addAnimation(aa);
-mRotatePhoto.startAnimation(set);
+mRotatePhoto.startAnimation(set);  
+
+//通过加载xml实现(动画文件在res/anim)
+//xml定义动画
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+    <alpha
+        android:duration="500"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
+    <translate
+        android:duration="500"
+        android:fillAfter="false"
+        android:fromXDelta="150" <!-- 相对于原来位置的偏移 -->
+        android:toXDelta="0" />
+
+</set>
+//从xml文件加载动画
+Animation anim1 = AnimationUtils.loadAnimation(getActivity(),R.anim.guide1_faxian_anim);
+myView.setAnimation(anim1);
 
 属性动画:
 //位移
