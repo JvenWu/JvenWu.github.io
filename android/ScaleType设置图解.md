@@ -1,4 +1,5 @@
 ## for Android: ImageView.ScaleType | ImageView.ScaleType设置图解 
+ImageView的ScaleType决定了图片在View上显示时的样子，如:进行何种比例的缩放，显示图片的整体还是部分等  
 >
 - 设置方式
 - ScaleType各类型图解
