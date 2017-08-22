@@ -24,7 +24,7 @@ imageView.setScaleType(ImageView.ScaleType.CENTER);
    按图片的原来size居中显示，当图片长/宽超过View的长/宽，则截取图片的居中部分显示
 ![image](../images-folder/center1.jpg) ![image](../images-folder/center2.gif)
 
-2. imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+2. imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);  
 按比例扩大图片的size居中显示，使得图片长(宽)等于或大于View的长(宽)
 ![image](../images-folder/center_crop1.gif) ![image](../images-folder/center_crop2.gif)
 
