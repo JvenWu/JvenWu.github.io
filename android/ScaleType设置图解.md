@@ -42,3 +42,5 @@ FIT_START是置于顶部，FIT_CENTER居中，FIT_END置于底部
 6. imageView.setScaleType(ImageView.ScaleType.FIT_XY);  
 不按比例缩放图片，目标是把图片塞满整个View  
 ![image](../images-folder/fit_xy1.gif) ![image](../images-folder/fit_xy2.gif)
+
+转载参考：http://blog.csdn.net/larryl2003/article/details/6919513
